@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 30% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 95%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 30% 97%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 38 70% 50%;
+    --primary-foreground: 40 30% 97%;
+
+    --secondary: 30 15% 90%;
+    --secondary-foreground: 30 10% 20%;
+
+    --muted: 35 15% 92%;
+    --muted-foreground: 30 8% 45%;
+
+    --accent: 38 60% 55%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 38 70% 50%;
+
+    --radius: 0.75rem;
+
+    --gold: 38 70% 50%;
+    --gold-light: 40 60% 70%;
+    --gold-dark: 35 75% 35%;
+    --cream: 40 30% 97%;
+    --cream-dark: 35 20% 90%;
+    --royal: 30 10% 15%;
+    --royal-light: 30 8% 30%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(38 70% 50%), hsl(45 80% 65%));
+    --gradient-royal: linear-gradient(135deg, hsl(30 10% 15%), hsl(30 15% 25%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    --shadow-gold: 0 8px 32px -8px hsl(38 70% 50% / 0.3);
+    --shadow-elegant: 0 20px 60px -15px hsl(30 10% 15% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .glass-navbar {
+    @apply bg-background/80 backdrop-blur-xl border-b border-border/50;
+  }
+
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-hover {
+    @apply transition-all duration-500;
+  }
+  .glow-hover:hover {
+    box-shadow: 0 0 30px hsl(38 70% 50% / 0.4), 0 0 60px hsl(38 70% 50% / 0.1);
+  }
+
+  .tilt-card {
+    @apply transition-transform duration-300;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .page-transition {
+    @apply animate-fade-in;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
